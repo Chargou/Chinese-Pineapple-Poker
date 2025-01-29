@@ -58,3 +58,6 @@ CardPile initDeck();
 void shuffleDeck(CardPile&);
 
 Card getLastCard(CardPile&);
+
+bool isEmpty(const CardPile&);
+

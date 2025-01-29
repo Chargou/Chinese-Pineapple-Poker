@@ -4,7 +4,6 @@
 using namespace std;
 
 
-
 bool operator<(const Suit c1, const Suit c2) { return int(c1) < int(c2); }
 bool operator>(const Suit c1, const Suit c2) { return int(c1) > int(c2); }
 bool operator==(const Suit c1, const Suit c2) { return int(c1) == int(c2); }
@@ -42,10 +41,9 @@ ostream& operator<<(ostream& os, const Card& card) {
 }
 
 ostream& operator<<(ostream& os, const CardPile& card_pile) {
-    os << "(";
-    for (int i=0; i<card_pile.cards.size()-1; i++)
-        os << card_pile.cards[i] << ", ";
-    os << card_pile.cards.back() << ")";
+    for (int i=0; i<card_pile.cards.size(); i++)
+        os << card_pile.cards[i] << " ";
+    os << endl;
     return os;
 }
 
@@ -68,3 +66,4 @@ Card getLastCard(CardPile& card_pile) {
     return card;
 }
 
+bool isEmpty(const CardPile& card_pile) { return card_pile.cards.empty(); }
