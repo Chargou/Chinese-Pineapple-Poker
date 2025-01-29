@@ -1,4 +1,8 @@
 #pragma once
+#include <iostream>
+#include <vector>
+#include <array>
+#include "Cards.hpp"
 using namespace std;
 
 struct Hand {
@@ -27,3 +31,4 @@ void assignCard(Player&);
 void assignAllCards(Player&);
 
 void dealNCards(CardPile&, Player&, int);
+

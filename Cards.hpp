@@ -1,6 +1,7 @@
 #pragma once
+#include <iostream>
+#include <vector>
 using namespace std;
-
 
 enum class Suit {Clubs, Diamonds, Hearts, Spades};
 enum class Value {Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace};
