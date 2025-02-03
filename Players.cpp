@@ -41,8 +41,9 @@ ostream& operator<<(ostream& os, const Player& player) {
 void assignCard(Player &player, const Card card) {
     int n;
     do {
-        cout << "Which hand do you want to assign the card: " << card << " to? "; cin >> n;
-    } while (n<1 or 3<n);
+        cout << "Which hand do you want to assign the card: " << card << " to? (0 To discard) "; cin >> n;
+    } while (n<0 or 3<n);
+    if (n==0) return;
     Hand& target = player.hands[n-1];
     if (target.size == target.cards.size()) {
         cout << "That hand is already full..." << endl;

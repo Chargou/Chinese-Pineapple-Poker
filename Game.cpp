@@ -16,7 +16,7 @@ void playGame() {
 
     auto deck = initDeck();
     shuffleDeck(deck);
-    for (int n: {5, 4, 4}) {
+    for (int n: {5, 3, 3, 3, 3}) {
         for (auto &player : players) {
             dealNCards(deck, player, n);
             assignAllCards(player);
