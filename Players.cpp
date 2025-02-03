@@ -14,7 +14,6 @@ ostream& operator<<(ostream& os, const Hand& hand) {
         os << card << " ";
     for (int i = hand.size-hand.cards.size(); i>0; i--)
         os << "-- ";
-    os << endl;
     return os;
 }
 
@@ -33,13 +32,13 @@ Player initPlayer() {
 ostream& operator<<(ostream& os, const Player& player) {
     os << player.name << ":" << endl;
     for (int i=3; i>0; i--)
-        cout << i << ": " << player.hands[i-1];
+        cout << i << ": " << player.hands[i-1] << endl;
     if (not isEmpty(player.cards_to_assign))
         cout << "Cards left to assign: " << player.cards_to_assign;
     return os;
 }
 
-void assignCard(Player& player, const Card card) {
+void assignCard(Player &player, const Card card) {
     int n;
     do {
         cout << "Which hand do you want to assign the card: " << card << " to? "; cin >> n;
@@ -48,7 +47,7 @@ void assignCard(Player& player, const Card card) {
     if (target.size == target.cards.size()) {
         cout << "That hand is already full..." << endl;
         return assignCard(player, card);
-    }// else:
+    }
     addCard(target, card);
 }
 
